@@ -5,10 +5,10 @@ on:
     branches:
       - master
 
-jobs:
-  env:
-    working-directory: ./money_matters
+jobs:  
   build-and-deploy:
+    env:
+      working-directory: ./money_matters
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
