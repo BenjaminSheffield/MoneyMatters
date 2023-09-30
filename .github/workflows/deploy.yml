@@ -8,7 +8,6 @@ on:
 jobs:
   env:
     working-directory: ./money_matters
-
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +21,7 @@ jobs:
         working-directory: ${{env.working-directory}}
       - name: Build web app
         run: flutter build web #--release --web-renderer=html
+        working-directory: ${{env.working-directory}}
 
       - uses: actions/upload-artifact@v3
         with:
