@@ -28,3 +28,7 @@ jobs:
           name: flutter-app
           path: money_matters/build/web/
           #working-directory: ${{env.working-directory}}
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
