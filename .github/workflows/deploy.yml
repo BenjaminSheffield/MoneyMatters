@@ -11,7 +11,7 @@ jobs:
       working-directory: ./money_matters
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Flutter
         uses: subosito/flutter-action@v1
         with:
@@ -26,5 +26,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: flutter-app
-          path: build/web/
-          working-directory: ${{env.working-directory}}
+          path: money_matters/build/web/
+          #working-directory: ${{env.working-directory}}
