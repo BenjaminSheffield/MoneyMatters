@@ -34,11 +34,8 @@ jobs:
         run: flutter build web #--release --web-renderer=html
         working-directory: ${{env.working-directory}}
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: github-pages
-          path: money_matters/build/web/
-          #working-directory: ${{env.working-directory}}
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
 
       - name: Deploy to GitHub Pages
         id: deployment
