@@ -31,7 +31,7 @@ jobs:
         run: flutter pub get
         working-directory: ${{env.working-directory}}
       - name: Build web app
-        run: flutter build web #--release --web-renderer=html
+        run: flutter build web --release --web-renderer=html
         working-directory: ${{env.working-directory}}
 
       - name: Upload Pages artifact
