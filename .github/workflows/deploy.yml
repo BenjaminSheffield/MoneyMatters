@@ -31,11 +31,13 @@ jobs:
         run: flutter pub get
         working-directory: ${{env.working-directory}}
       - name: Build web app
-        run: flutter build web  #--release --web-renderer=html
+        run: flutter build web #--release --web-renderer=html
         working-directory: ${{env.working-directory}}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: money_matters/build/web/
 
       - name: Deploy to GitHub Pages
         id: deployment
