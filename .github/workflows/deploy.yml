@@ -6,6 +6,9 @@ on:
       - master
 
 jobs:
+  env:
+    working-directory: ./money-matters
+
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -16,10 +19,12 @@ jobs:
           channel: stable
       - name: Install dependencies
         run: flutter pub get
+        working-directory: ${{env.working-directory}}
       - name: Build web app
         run: flutter build web #--release --web-renderer=html
 
       - uses: actions/upload-artifact@v3
         with:
           name: flutter-app
-          path: build/web/ # or path/to/artifact
+          path: build/web/
+          working-directory: ${{env.working-directory}}
