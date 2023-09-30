@@ -7,7 +7,7 @@ on:
 
 jobs:
   env:
-    working-directory: ./money-matters
+    working-directory: ./money_matters
 
   build-and-deploy:
     runs-on: ubuntu-latest
