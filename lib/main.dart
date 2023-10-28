@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //   ),
               // ),
               // ElevatedCard(),
-              Text('Example card'),
+              
               Expanded(
                 child: Container(
                   color: Theme.of(context).colorScheme.primaryContainer,
