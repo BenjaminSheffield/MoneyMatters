@@ -116,9 +116,8 @@ class ElevatedCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Card(
-        child: SizedBox(
-          width: 300,
-          height: 100,
+        child: FittedBox(
+          fit: BoxFit.contain,
           child: DataTableCurrentAccount(),
         ),
       ),
