@@ -187,7 +187,7 @@ class DataTableCurrentAccount extends StatelessWidget {
           cells: <DataCell>[
              DataCell(Text('')),
             DataCell(Text('Tax')),
-            DataCell(Text('259.11')),
+            DataCell(Text('\$259.11')),
             DataCell(Text('')),
             DataCell(Text('\$605.59')),
           ],
