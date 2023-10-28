@@ -94,11 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
               //     },
               //   ),
               // ),
-              ElevatedCard(),
+              // ElevatedCard(),
               Expanded(
                 child: Container(
                   color: Theme.of(context).colorScheme.primaryContainer,
-                  child: page,
+                  child: ElevatedCard(),
                 ),
               ),
             ],
@@ -119,9 +119,108 @@ class ElevatedCard extends StatelessWidget {
         child: SizedBox(
           width: 300,
           height: 100,
-          child: Center(child: Text('Elevated Card')),
+          child: DataTableCurrentAccount(),
         ),
       ),
+    );
+  }
+}
+
+class DataTableCurrentAccount extends StatelessWidget {
+  const DataTableCurrentAccount({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DataTable(
+      columns: const <DataColumn>[
+        DataColumn(
+          label: Expanded(
+            child: Text(
+              'Date',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
+        DataColumn(
+          label: Expanded(
+            child: Text(
+              'Item',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
+        DataColumn(
+          label: Expanded(
+            child: Text(
+              'Debit',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
+        DataColumn(
+          label: Expanded(
+            child: Text(
+              'Credit',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
+        DataColumn(
+          label: Expanded(
+            child: Text(
+              'Balance',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
+      ],
+      rows: const <DataRow>[
+        DataRow(
+          cells: <DataCell>[
+            DataCell(Text('Week 1')),
+            DataCell(Text('Income (Salary)')),
+            DataCell(Text('')),
+            DataCell(Text('\$863.70')),
+            DataCell(Text('\$863.70')),
+          ],
+        ),
+        DataRow(
+          cells: <DataCell>[
+             DataCell(Text('')),
+            DataCell(Text('Tax')),
+            DataCell(Text('259.11')),
+            DataCell(Text('')),
+            DataCell(Text('\$605.59')),
+          ],
+        ),
+        DataRow(
+          cells: <DataCell>[
+             DataCell(Text('')),
+            DataCell(Text('Mortgage/Rent')),
+            DataCell(Text('\$250.00')),
+            DataCell(Text('')),
+            DataCell(Text('\$355.59')),
+          ],
+        ),
+         DataRow(
+          cells: <DataCell>[
+             DataCell(Text('')),
+            DataCell(Text('Groceries card#')),
+            DataCell(Text('\$167.15')),
+            DataCell(Text('')),
+            DataCell(Text('\$188.44')),
+          ],
+        ),
+         DataRow(
+          cells: <DataCell>[
+             DataCell(Text('')),
+            DataCell(Text('Fortune: New Shoes')),
+            DataCell(Text('\$139.00')),
+            DataCell(Text('')),
+            DataCell(Text('\$49.44')),
+          ],
+        ),
+      ],
     );
   }
 }
