@@ -94,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //     },
               //   ),
               // ),
+              ElevatedCard(),
               Expanded(
                 child: Container(
                   color: Theme.of(context).colorScheme.primaryContainer,
@@ -104,6 +105,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         );
       }
+    );
+  }
+}
+
+class ElevatedCard extends StatelessWidget {
+  const ElevatedCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Card(
+        child: SizedBox(
+          width: 300,
+          height: 100,
+          child: Center(child: Text('Elevated Card')),
+        ),
+      ),
     );
   }
 }
